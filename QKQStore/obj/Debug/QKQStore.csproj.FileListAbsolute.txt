@@ -1,0 +1,166 @@
+D:\Lập trình web\QKQStore\QKQStore\bin\QKQStore.dll.config
+D:\Lập trình web\QKQStore\QKQStore\bin\QKQStore.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\QKQStore.pdb
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\csc.exe
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\csc.exe.config
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\csc.rsp
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\csi.exe
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\csi.exe.config
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\csi.rsp
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.AppContext.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Collections.Immutable.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Console.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Globalization.Calendars.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.IO.Compression.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.IO.FileSystem.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Net.Http.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Net.Sockets.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Reflection.Metadata.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.ValueTuple.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Xml.XPath.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\vbc.exe
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\vbc.exe.config
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\vbc.rsp
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\VBCSCompiler.exe
+D:\Lập trình web\QKQStore\QKQStore\bin\roslyn\VBCSCompiler.exe.config
+D:\Lập trình web\QKQStore\QKQStore\bin\Antlr3.Runtime.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\Microsoft.Web.Infrastructure.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\Newtonsoft.Json.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.Helpers.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.Mvc.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.Optimization.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.Razor.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.Deployment.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.Razor.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\WebGrease.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.Helpers.xml
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.Mvc.xml
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.Optimization.xml
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.Razor.xml
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.xml
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.Deployment.xml
+D:\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.Razor.xml
+D:\Lập trình web\QKQStore\QKQStore\bin\Newtonsoft.Json.xml
+D:\Lập trình web\QKQStore\QKQStore\bin\Antlr3.Runtime.pdb
+D:\Lập trình web\QKQStore\QKQStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.csproj.AssemblyReference.cache
+D:\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.csproj.CoreCompileInputs.cache
+D:\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.csproj.CopyComplete
+D:\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.dll
+D:\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.pdb
+D:\Lập trình web\QKQStore\QKQStore\bin\EntityFramework.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\EntityFramework.SqlServer.dll
+D:\Lập trình web\QKQStore\QKQStore\bin\EntityFramework.xml
+D:\Lập trình web\QKQStore\QKQStore\bin\EntityFramework.SqlServer.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\QKQStore.dll.config
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\QKQStore.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\QKQStore.pdb
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\csc.exe
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\csc.exe.config
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\csc.rsp
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\csi.exe
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\csi.exe.config
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\csi.rsp
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.AppContext.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Collections.Immutable.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Console.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Globalization.Calendars.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.IO.Compression.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.IO.FileSystem.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Net.Http.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Net.Sockets.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Reflection.Metadata.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.ValueTuple.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Xml.XPath.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\vbc.exe
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\vbc.exe.config
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\vbc.rsp
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\VBCSCompiler.exe
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\roslyn\VBCSCompiler.exe.config
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\Antlr3.Runtime.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\EntityFramework.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\EntityFramework.SqlServer.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\Microsoft.Web.Infrastructure.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\Newtonsoft.Json.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Helpers.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Mvc.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Optimization.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Razor.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.Deployment.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.Razor.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\WebGrease.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\EntityFramework.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\EntityFramework.SqlServer.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Helpers.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Mvc.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Optimization.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Razor.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.Deployment.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.Razor.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\Newtonsoft.Json.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\Antlr3.Runtime.pdb
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.csproj.AssemblyReference.cache
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.csproj.CoreCompileInputs.cache
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.csproj.CopyComplete
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.pdb

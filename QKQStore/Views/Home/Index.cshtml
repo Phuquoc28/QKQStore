@@ -1,0 +1,68 @@
+﻿@using QKQStore.Models
+@model IEnumerable<Products>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Trang Chủ";
+}
+<!-- BANNER TEXT -->
+<section class="text-banner d-flex flex-column align-items-center justify-content-center text-center py-5 px-3">
+    <h1 class="display-5 fw-bold mb-3">Mừng Khai Trương QKQStore </h1>
+    <p class="fs-4 mb-1">Đồng Giá <span class="text-danger fw-bold fs-2">77K</span></p>
+    <p class="fs-5 mb-1">Cùng Hàng Ngàn Deal Hot</p>
+    <p class="fs-5 mb-3">Sale Up To <span class="text-danger fw-bold fs-2">50%</span></p>
+    <a href="/Sales" class="btn btn-dark px-4 py-2 rounded-pill fw-semibold">SĂN SALE NGAY</a>
+</section>
+
+<div class="row">
+    @foreach (var product in Model)
+    {
+        <div class="col-sm-4 col-md-4 col-lg-3 d-flex align-items-stretch mb-4">
+            <div class="card w-100 shadow-sm">
+                <a href="@Url.Action("Details", "Products", new { id = product.Id })">
+                    <div class="d-flex align-items-center justify-content-center h-100">
+                        <img src="@Url.Content("~/Content/Pic/" + product.Image)"
+                             class="img-fluid"
+                             style="max-height: 100%; max-width: 100%; object-fit: contain;"
+                             alt="@product.Title" />
+                    </div>
+                </a>
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">@product.Title</h5>
+                    <p class="card-text text-danger fw-bold">@product.Price.ToString("N0") VNĐ</p>
+                    <a href="@Url.Action("Themsanpham", "GioHang", new { id = product.Id })" class="btn btn-sm btn-primary mt-auto">Thêm vào giỏ</a>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@*<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">ASP.NET</h1>
+        <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+        <p><a href="https://asp.net" class="btn btn-primary btn-md">Learn more &raquo;</a></p>
+    </section>
+
+    <div class="row">
+        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+            <h2 id="gettingStartedTitle">Getting started</h2>
+            <p>
+                ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+                enables a clean separation of concerns and gives you full control over markup
+                for enjoyable, agile development.
+            </p>
+            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        </section>
+        <section class="col-md-4" aria-labelledby="librariesTitle">
+            <h2 id="librariesTitle">Get more libraries</h2>
+            <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+            <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+        </section>
+    <section class="col-md-4" aria-labelledby="hostingTitle">
+                <h2 id="hostingTitle">Web Hosting</h2>
+                <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+                <p><a class="btn btn-outline-dark" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+            </section>
+        </div>
+    </main>*@

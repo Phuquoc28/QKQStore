@@ -1,0 +1,53 @@
+﻿@model QKQStore.Models.Users
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm("Register", "User", FormMethod.Post))
+{
+    <div class="row">
+        <div class="form-group">
+            @Html.LabelFor(temp => temp.Fullname)
+            @Html.TextBoxFor(temp => temp.Fullname,
+           new {placeholder = "Tên Đăng Nhập", 
+               @class="form-control"})
+            @Html.ValidationMessageFor(temp => temp.Fullname, "", new {@class="text-danger"} )
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(temp => temp.Password)
+            @Html.PasswordFor(temp => temp.Password,
+           new {placeholder = "Password", 
+               @class="form-control"})
+            @Html.ValidationMessageFor(temp => temp.Password, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(temp => temp.Email)
+            @Html.TextBoxFor(temp => temp.Email,
+           new {placeholder = "Email", 
+               @class="form-control"})
+            @Html.ValidationMessageFor(temp => temp.Email, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(temp => temp.PhoneNumber)
+            @Html.TextBoxFor(temp => temp.PhoneNumber,
+           new {placeholder = "Số Điện Thoại", 
+               @class="form-control"})
+            @Html.ValidationMessageFor(temp => temp.PhoneNumber, "", new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(temp => temp.Address)
+            @Html.TextBoxFor(temp => temp.Address,
+           new {placeholder = "Địa Chỉ", 
+               @class="form-control"})
+            @Html.ValidationMessageFor(temp => temp.Address, "", new { @class = "text-danger" })
+        </div>
+        <button type="submit" class="btn btn-success" style="width:200px; margin-left:auto; margin-right:auto">ĐĂNG KÝ</button>
+    </div>
+}

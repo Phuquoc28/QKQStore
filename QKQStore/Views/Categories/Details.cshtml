@@ -1,0 +1,51 @@
+﻿@model QKQStore.Models.Categories
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Chi Tiết Danh Mục";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Categories</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.CreateAt)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.CreateAt)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.UpdateAt)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.UpdateAt)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Chỉnh Sửa", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

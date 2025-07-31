@@ -1,0 +1,148 @@
+﻿body {
+}
+
+.main-header {
+    background-color: #121212;
+    color: white;
+    padding: 10px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.sticky-top {
+    z-index: 1000;
+}
+
+.floating-icons {
+    position: fixed;
+    right: 15px;
+    bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+/* HOT như số mũ */
+.hot-badge {
+    font-size: 10px;
+    color: red;
+    position: absolute;
+    top: -8px;
+    right: -12px;
+}
+
+/* Hover dropdown (không cần click) */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-menu {
+    margin-top: 0;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+
+
+/*MODAL*/
+.modal-dialog {
+    max-width: 800px;
+    width: 100%;
+}
+
+.modal-content {
+    min-height: 400px;
+}
+
+.modal-body {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+    .modal-body img {
+        max-width: 300px;
+        max-height: 300px;
+        object-fit: contain;
+    }
+
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.price-block {
+    display: flex;
+    gap: 15px;
+    align-items: baseline;
+}
+
+    .price-block .old-price {
+        text-decoration: line-through;
+        color: #888;
+    }
+
+    .price-block .new-price {
+        font-weight: bold;
+        color: red;
+        font-size: 1.3rem;
+    }
+
+.action-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: auto;
+}
+
+
+/*FOOTER*/
+.footer {
+    background-color: #222;
+    color: white;
+    font-size: 0.9rem;
+}
+
+    .footer a:hover {
+        text-decoration: underline;
+    }
+
+
+/*BANNER*/
+.text-banner {
+    background-color: #f9f9f9;
+    min-height: 400px;
+    font-family: 'Arial', sans-serif;
+}
+
+    .text-banner h1 {
+        font-size: 2.5rem;
+        color: #111;
+    }
+
+    .text-banner p {
+        color: #333;
+    }
+
+    .text-banner .btn {
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+    }
+
+        .text-banner .btn:hover {
+            background-color: #ff5e57;
+            border-color: #ff5e57;
+            color: white;
+        }
