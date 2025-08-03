@@ -17,7 +17,7 @@ namespace QKQStore.Models
 
         public decimal TotalPrice()
         {
-            return Quantity * Price;
+            return Quantity * Discount;
         }
 
 

@@ -164,3 +164,7 @@ D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.csproj.
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.csproj.CopyComplete
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.dll
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.pdb
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.Mvc.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.Mvc.xml

@@ -13,13 +13,13 @@ namespace QKQStore.Controllers
         // GET: GioHang
         public ActionResult Index()
         {
-                List<Models.Mathangmua> cards = LayGioHang();
+            List<Models.Mathangmua> cards = LayGioHang();
 
-                ViewBag.TongSl = Quantity();
-                ViewBag.TongTien = TinhTongTien();
+            ViewBag.TongSl = Quantity();
+            ViewBag.TongTien = TinhTongTien();
 
-                return View(cards); // KHÔNG còn redirect nữa
-           
+            return View(cards); // KHÔNG còn redirect nữa
+
 
         }
         public List<Models.Mathangmua> LayGioHang()
@@ -68,7 +68,7 @@ namespace QKQStore.Controllers
             return TongTien;
         }
         //thong tin ben trong gio hang
-       
+
         public ActionResult GioHangPartial()
         {
             ViewBag.TongSl = Quantity();
@@ -83,28 +83,40 @@ namespace QKQStore.Controllers
             if (product != null)
             {
                 giohang.RemoveAll(s => s.ProductId == Id);
-                return RedirectToAction("Hienthigiohang");
+                return RedirectToAction("Index", "GioHang");
             }
             if (product == null)
                 return RedirectToAction("Index", "GioHang");
-            return RedirectToAction("Hienthigiohang");
-
+            return RedirectToAction("Index", "GioHang");
         }
 
 
         //cap nhat gio hang 
 
-        public ActionResult CapnhatMathang(int Id, int Quatity)
+        public ActionResult CapnhatMathang(int Id, int Quantity)
         {
             List<Models.Mathangmua> giohang = LayGioHang();
 
             var product = giohang.FirstOrDefault(s => s.ProductId == Id);
             if (product != null)
             {
-                product.Quantity = Quatity;
+                product.Quantity = Quantity;
             }
-            return RedirectToAction("Hienthigiohang");
+            return RedirectToAction("Index", "GioHang");
 
+        }
+        public ActionResult DatHang()
+        {
+            if (Session["TaiKhoan"] == null)
+                return RedirectToAction("Login", "User");
+            List<Models.Mathangmua> giohang = LayGioHang();
+            if (giohang == null || giohang.Count == 0)
+                return RedirectToAction("Index", "GioHang");
+
+
+            ViewBag.TongSl = Quantity();
+            ViewBag.TongTien = TinhTongTien();
+            return View(giohang);
         }
     }
 

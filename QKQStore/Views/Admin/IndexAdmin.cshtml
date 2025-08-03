@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>Quản Lý Sản Phẩm Admin</h2>
+<h2>IndexAdmin</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -60,7 +60,7 @@
             @Html.DisplayFor(modelItem => item.Discount)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Image)
+            <img src="@Url.Content("~/Content/Pic/" + item.Image)" alt="Ảnh sản phẩm" width="100" height="100" />
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Description)

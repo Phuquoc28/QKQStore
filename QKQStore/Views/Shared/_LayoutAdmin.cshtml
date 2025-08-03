@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    ViewBag.Title = "_LayoutAdmin";
+
+}
+
+<h2>_LayoutAdmin</h2>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -39,9 +46,9 @@
                     </ul>
                 </div>
                 <div class="dropdown">
-                    <a class="nav-link text-white d-flex align-items-center" href="#">
-                        Quần <i class="bi bi-caret-down-fill ms-1"></i>
-                    </a>
+                    <a
+                    </a> class="nav-link text-white d-flex align-items-center" href="#">
+                    QUẦN <i class="bi bi-caret-down-fill ms-1"></i>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Quần short</a></li>
                         <li><a class="dropdown-item" href="#">Quần dài</a></li>
@@ -75,10 +82,7 @@
             <div class="d-flex align-items-center gap-3">
                 <a href="@Url.Action("Login","User")"><i class="bi bi-person text-white fs-4"></i></a>
                 <a href="@Url.Action("Index", "GioHang")" class="position-relative">
-               
-                    <div class="ml-auto">
-                        @Html.Action("GioHangPartial", "GioHang")
-                    </div>
+                    <i class="bi bi-cart text-white fs-4"></i>
                 </a>
 
                 <form class="d-flex">
@@ -88,68 +92,69 @@
             </div>
         </div>
     </nav>
-        @*
-            
-                    <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
-                        <ul class="navbar-nav flex-grow-1">
-                            <li>@Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                            <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>*@
-        <div class="container body-content">
-            @RenderBody()
-            <hr />
+    @*
 
-        </div>
-
-        <!-- FOOTER -->
-        <footer class="footer mt-5 py-4 text-white">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-3">
-                        <div class="d-flex align-items-center mb-2">
-                            <img src="~/Content/Pic/QKQlogo.png" alt="Logo" style="height: 40px;" />
-                            <span class="ms-2 fs-5 fw-bold">QKQstore.vn</span>
-                        </div>
-                        <p>Email: contact@qkqstore.vn</p>
-                        <p>Hotline: 0971 234 567</p>
-                        <p>Địa chỉ: 123 QKQ Street, TP.HCM</p>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <h6 class="fw-bold">Chính sách</h6>
-                        <ul class="list-unstyled">
-                            <li><a href="#" class="text-white text-decoration-none">Chính sách đổi trả</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Chính sách bảo mật</a></li>
-                            <li><a href="#" class="text-white text-decoration-none">Điều khoản dịch vụ</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 mb-3">
-                        <h6 class="fw-bold">Kết nối với chúng tôi</h6>
-                        <div class="d-flex gap-3">
-                            <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
-                            <a href="https://zalo.me/g/oqvzlk749" class="text-white fs-4"><i class="bi bi-chat-dots-fill"></i></a>
-                            <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
-                        </div>
-                    </div>
+                <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li>@Html.ActionLink("Trang Chủ", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    </ul>
                 </div>
-                <hr class="border-light" />
-                <p class="text-center mb-0">&copy; 2025 QKQstore.vn. All rights reserved.</p>
             </div>
-        </footer>
-        <!-- ICON ZALO + LIÊN HỆ -->
-        <div class="floating-icons">
-            <a href="https://zalo.me/g/oqvzlk749" target="_blank"><img src="~/Content/Pic/Icon_of_Zalo.svg.png" width="40" /></a>
-            <a href="tel:0971234567"><img src="~/Content/Pic/Lienhelogo.png" width="40" /></a>
+        </nav>*@
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer mt-5 py-4 text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="d-flex align-items-center mb-2">
+                        <img src="~/Content/Pic/QKQlogo.png" alt="Logo" style="height: 40px;" />
+                        <span class="ms-2 fs-5 fw-bold">QKQstore.vn</span>
+                    </div>
+                    <p>Email: contact@qkqstore.vn</p>
+                    <p>Hotline: 0971 234 567</p>
+                    <p>Địa chỉ: 123 QKQ Street, TP.HCM</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold">Chính sách</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white text-decoration-none">Chính sách đổi trả</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Chính sách bảo mật</a></li>
+                        <li><a href="#" class="text-white text-decoration-none">Điều khoản dịch vụ</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6 class="fw-bold">Kết nối với chúng tôi</h6>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                        <a href="https://zalo.me/g/oqvzlk749" class="text-white fs-4"><i class="bi bi-chat-dots-fill"></i></a>
+                        <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="border-light" />
+            <p class="text-center mb-0">&copy; 2025 QKQstore.vn. All rights reserved.</p>
         </div>
+    </footer>
+    <!-- ICON ZALO + LIÊN HỆ -->
+    <div class="floating-icons">
+        <a href="https://zalo.me/g/oqvzlk749" target="_blank"><img src="~/Content/Pic/Icon_of_Zalo.svg.png" width="40" /></a>
+        <a href="tel:0971234567"><img src="~/Content/Pic/Lienhelogo.png" width="40" /></a>
+    </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-        @Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")
-        @Scripts.Render("~/bundles/jqueryval")
-        @RenderSection("scripts", required: false)
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/jqueryval")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
+

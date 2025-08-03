@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using QKQStore.Models;
-
+using PagedList;
 
 namespace QKQStore.Controllers
 {
@@ -14,7 +14,22 @@ namespace QKQStore.Controllers
         // GET: Admin
         public ActionResult IndexAdmin()
         {
-            return View(database.Products.ToList());
+            if (Session["TaiKhoan"] == null || ((Users)Session["TaiKhoan"]).RoleId != 1)
+            {
+                return RedirectToAction("Login", "User");
+            }
+            return View();
+        }
+        //Hiển thị danh sách sản phẩm và phân trang
+        public ActionResult SanPham(int? page)
+        {
+            var listProduct = database.Products.ToList();
+            //Tạo Biến cho biết số sản phẩm mỗi trang 
+            int pageSize = 7;
+            //Tạo Biến số trang 
+            int pageNum = (page ?? 1);
+            return View(listProduct.OrderBy(sp => sp.Id).ToPagedList(pageNum,pageSize));
+         
         }
     }
 }

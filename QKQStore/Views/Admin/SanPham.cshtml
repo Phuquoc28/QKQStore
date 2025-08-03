@@ -1,0 +1,62 @@
+﻿
+@using QKQStore.Models
+@using PagedList.Mvc
+@model PagedList.PagedList<Products>
+
+@{
+    ViewBag.Title = "SanPham";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2>QUẢN LÝ SẢN PHẨM</h2>
+
+<p>
+    @Html.ActionLink("THÊM MỚI", "Create", "Products")
+</p>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Tên sản phẩm</th>
+        <th>Giá</th>
+        <th>Mô tả</th>
+        <th>Ảnh</th>
+        <th>Danh mục</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Title</td>
+            <td>@item.Discount</td>
+            <td>@item.Description</td>
+            <td>
+                <img src="@Url.Content("~/Content/Pic/" + item.Image)"
+                     style="width:80px;height:auto;" alt="@item.Title" />
+            </td>
+            <td>@item.Categories.Name</td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", "Products", new { id = item.Id }, null) |
+                @Html.ActionLink("Chi tiết", "Details", "Products", new { id = item.Id }, null) |
+                @Html.ActionLink("Xóa", "Delete", "Products", new { id = item.Id }, null)
+            </td>
+        </tr>
+    }
+</table>
+
+<br />
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+<div class="MenuTrang">
+    @Html.PagedListPager(Model, page => Url.Action("SanPham", new { page }))
+</div>
+
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+
+    td, th {
+        text-align: center;
+    }
+</style>
