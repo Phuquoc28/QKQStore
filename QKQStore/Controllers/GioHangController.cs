@@ -38,15 +38,15 @@ namespace QKQStore.Controllers
         {
             List<Models.Mathangmua> cards = LayGioHang();
 
-            Models.Mathangmua prodduct = cards.FirstOrDefault(s => s.ProductId == Id);
-            if (prodduct == null)
+            Models.Mathangmua product = cards.FirstOrDefault(s => s.ProductId == Id);
+            if (product == null)
             {
-                prodduct = new Models.Mathangmua(Id);
-                cards.Add(prodduct);
+                product = new Models.Mathangmua(Id);
+                cards.Add(product);
             }
             else
             {
-                prodduct.Quantity++;
+                product.Quantity++;
             }
             return RedirectToAction("Details", "Products", new { id = Id });
         }
@@ -75,6 +75,37 @@ namespace QKQStore.Controllers
             ViewBag.TongTien = TinhTongTien();
             return PartialView();
         }
+        public ActionResult Xoamathang(int Id)
+        {
+            List<Models.Mathangmua> giohang = LayGioHang();
 
+            var product = giohang.FirstOrDefault(s => s.ProductId == Id);
+            if (product != null)
+            {
+                giohang.RemoveAll(s => s.ProductId == Id);
+                return RedirectToAction("Hienthigiohang");
+            }
+            if (product == null)
+                return RedirectToAction("Index", "GioHang");
+            return RedirectToAction("Hienthigiohang");
+
+        }
+
+
+        //cap nhat gio hang 
+
+        public ActionResult CapnhatMathang(int Id, int Quatity)
+        {
+            List<Models.Mathangmua> giohang = LayGioHang();
+
+            var product = giohang.FirstOrDefault(s => s.ProductId == Id);
+            if (product != null)
+            {
+                product.Quantity = Quatity;
+            }
+            return RedirectToAction("Hienthigiohang");
+
+        }
     }
+
 }

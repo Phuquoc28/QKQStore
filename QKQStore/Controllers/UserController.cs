@@ -8,8 +8,8 @@ using System.Data.Entity.Validation;
 using System.Text;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Helpers;
 using System.Diagnostics;
+using System.Web.ModelBinding;
 
 namespace QKQStore.Controllers
 {
@@ -38,29 +38,37 @@ namespace QKQStore.Controllers
                     ModelState.AddModelError(string.Empty, "Tên Tài Khoản Hoặc Email Đã Được Sử Dụng");
                     return View(user);
                 }
-                user.Password = Crypto.HashPassword(user.Password);
                 user.RoleId = 2;
                 user.CreateAt = DateTime.Now;
                 user.UpdateAt = null;
                
             }
-            try
-            {
-                database.Users.Add(user);
-                database.SaveChanges();
-                return RedirectToAction("Index", "Home");
-            }
-            catch (DbEntityValidationException ex)
-{
-                foreach (var eve in ex.EntityValidationErrors)
+            database.Users.Add(user);
+            database.SaveChanges();
+            return RedirectToAction("Login");
+
+        }
+        [HttpGet]
+        public ActionResult Login()
+        {
+            return View() ;
+        }
+        [HttpPost]
+        public ActionResult Login(Users user)
+        {
+                var khachHang = database.Users.FirstOrDefault(kh => kh.Fullname == user.Fullname && kh.Password == user.Password);
+                if(khachHang != null)
                 {
-                    foreach (var ve in eve.ValidationErrors)
-                    {
-                        Debug.WriteLine($"Property: {ve.PropertyName} Error: {ve.ErrorMessage}");
-                    }
+                    ViewBag.ThongBao = "Đăng Nhập Thành Công";
+                    Session["TaiKhoan"] = khachHang;
+                    return RedirectToAction("Index", "Home");
                 }
-            }
-            return View(user);
+                else
+                {
+                    ViewBag.ThongBao = "Tên Đăng Nhập Hoặc Mật Khẩu Không Đúng Vui Lòng Nhập Lại";
+                    return View();
+                }
+            return View();
         }
         public ActionResult Create() { return View(); }
         [HttpPost]
@@ -82,11 +90,7 @@ namespace QKQStore.Controllers
                 return View();
             }
         }
-        public ActionResult Details(int id)
-        {
-            var users = database.Users.Find(id);
-            return View(users);
-        }
+      
         [HttpGet]
         public ActionResult Edit(int id)
         {

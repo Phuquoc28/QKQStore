@@ -26,24 +26,23 @@ namespace QKQStore.Models
         [DisplayName("Mã Người Dùng")]
         public int Id { get; set; }
         [DisplayName("Tên Đăng Nhập")]
-        [Required(ErrorMessage = "Họ Tên Không Được Để Trống")]
+        [Required(ErrorMessage = "Vui Lòng Điền Đầy Đủ Thông Tin")]
         public string Fullname { get; set; }
     
         [DisplayName("Email")]
-        [Required(ErrorMessage = "Email Không Được Để Trống")]
+        [Required(ErrorMessage = "Vui Lòng Điền Đầy Đủ Thông Tin")]
         public string Email { get; set; }
 
         [DisplayName("Số Điện Thoại")]
-        [Required(ErrorMessage = "Số Điện Thoại Không Được Để Trống")]
+        [Required(ErrorMessage = "Vui Lòng Điền Đầy Đủ Thông Tin")]
         public string PhoneNumber { get; set; }
   
         [DisplayName("Địa Chỉ")]
-        [Required(ErrorMessage = "Địa Chỉ Không Được Để Trống")]
         public string Address { get; set; }
        
         [DisplayName("Mật Khẩu")]
         [MaxLength(255)]
-        [Required(ErrorMessage = "Mật Khẩu Không Được Để Trống")]
+        [Required(ErrorMessage = "Vui Lòng Điền Đầy Đủ Thông Tin")]
         public string Password { get; set; }
         [DisplayName("Vai Trò")]
         public int RoleId { get; set; }
