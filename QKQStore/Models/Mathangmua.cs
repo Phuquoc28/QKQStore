@@ -11,11 +11,11 @@ namespace QKQStore.Models
         public int ProductId { get; set; }
         public string Title { get; set; }
         public string Image { get; set; }
-        public decimal Price { get; set; }
-        public decimal Discount { get; set; }
+        public int Price { get; set; }
+        public int Discount { get; set; }
         public int Quantity { get; set; }
 
-        public decimal TotalPrice()
+        public int TotalPrice()
         {
             return Quantity * Discount;
         }
@@ -31,7 +31,7 @@ namespace QKQStore.Models
             this.Image = item.Image;
             this.Discount = item.Discount ?? 0;
             this.Quantity = 1;
-            this.Price = decimal.Parse(item.Price.ToString());
+            this.Price = int.Parse(item.Price.ToString());
 
         }
     }

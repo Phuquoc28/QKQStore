@@ -32,20 +32,26 @@ namespace QKQStore.Controllers
             if (ModelState.IsValid)
             {
                 //Kiểm tra email và tên có chưa
-                var KhachHang = database.Users.FirstOrDefault(kh => kh.Fullname == user.Fullname || kh.Email == user.Email);
-                if(KhachHang != null)
+                var fullName = database.Users.FirstOrDefault(kh => kh.Fullname == user.Fullname);
+                var email = database.Users.FirstOrDefault(kh => kh.Email == user.Email);
+                if(fullName != null)
                 {
-                    ModelState.AddModelError(string.Empty, "Tên Tài Khoản Hoặc Email Đã Được Sử Dụng");
+                    ModelState.AddModelError("Fullname", "Tên Tài Khoản Hoặc Email Đã Được Sử Dụng");
+                    return View();
+                }
+                if(email != null)
+                {
+                    ModelState.AddModelError("Email", "Tên Tài Khoản Hoặc Email Đã Được Sử Dụng");
                     return View(user);
                 }
                 user.RoleId = 2;
                 user.CreateAt = DateTime.Now;
                 user.UpdateAt = null;
-               
+                database.Users.Add(user);
+                database.SaveChanges();
+                return RedirectToAction("Login");
             }
-            database.Users.Add(user);
-            database.SaveChanges();
-            return RedirectToAction("Login");
+            return View();
 
         }
         [HttpGet]
@@ -56,19 +62,26 @@ namespace QKQStore.Controllers
         [HttpPost]
         public ActionResult Login(Users user)
         {
-                var khachHang = database.Users.FirstOrDefault(kh => kh.Fullname == user.Fullname && kh.Password == user.Password);
-                if(khachHang != null)
-                {
-                    ViewBag.ThongBao = "Đăng Nhập Thành Công";
-                    Session["TaiKhoan"] = khachHang;
-                    return RedirectToAction("Index", "Home");
-                }
+            var khachHang = database.Users.FirstOrDefault(kh => kh.Fullname == user.Fullname && kh.Password == user.Password);
+            if (khachHang != null)
+            {
+                Session["TaiKhoan"] = khachHang;
+                Session["Fullname"] = khachHang.Fullname; 
+                ViewBag.ThongBao = "Đăng Nhập Thành Công";
+
+                if (khachHang.RoleId == 1)
+                    return RedirectToAction("IndexAdmin", "Admin");
                 else
-                {
-                    ViewBag.ThongBao = "Tên Đăng Nhập Hoặc Mật Khẩu Không Đúng Vui Lòng Nhập Lại";
-                    return View();
-                }
+                    return RedirectToAction("Index", "Home");
+            }
+            else
+            ViewBag.ThongBao = "Tên Đăng Nhập Hoặc Mật Khẩu Không Đúng";
             return View();
+        }
+        public ActionResult Logout()
+        {
+            Session.Clear();
+            return RedirectToAction("Index", "Home");
         }
         public ActionResult Create() { return View(); }
         [HttpPost]

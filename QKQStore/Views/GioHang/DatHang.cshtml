@@ -1,8 +1,36 @@
-﻿
+﻿@model List<QKQStore.Models.Mathangmua>
 @{
     ViewBag.Title = "DatHang";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var order = ViewBag.Order as QKQStore.Models.Orders;
+}
 }
 
-<h2>DatHang</h2>
+<h2 style="text-align:center">THÔNG TIN NGƯỜI NHẬN HÀNG</h2>
 
+@using (Html.BeginForm("DatHang", "GioHang", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Họ tên</label>
+        @Html.TextBox("FullName", order?.FullName, new { @class = "form-control", placeholder = "Tên người nhận" })
+    </div>
+
+    <div class="form-group">
+        <label>Số điện thoại</label>
+        @Html.TextBox("PhoneNumber", order?.PhoneNumber, new { @class = "form-control", placeholder = "SĐT liên lạc" })
+    </div>
+
+    <div class="form-group">
+        <label>Địa chỉ</label>
+        @Html.TextBox("Address", order?.Address, new { @class = "form-control", placeholder = "Số nhà, đường, phường, quận..." })
+    </div>
+
+    <div class="form-group">
+        <label>Ghi chú</label>
+        @Html.TextArea("Note", order?.Note, new { @class = "form-control", rows = 3 })
+    </div>
+
+    <div class="form-group text-center">
+        <input type="submit" class="btn btn-success" value="ĐỒNG Ý ĐẶT HÀNG" />
+    </div>
+}

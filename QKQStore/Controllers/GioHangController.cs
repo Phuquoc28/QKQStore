@@ -105,19 +105,77 @@ namespace QKQStore.Controllers
             return RedirectToAction("Index", "GioHang");
 
         }
+        //xu ly dat hang
         public ActionResult DatHang()
         {
             if (Session["TaiKhoan"] == null)
                 return RedirectToAction("Login", "User");
+
             List<Models.Mathangmua> giohang = LayGioHang();
             if (giohang == null || giohang.Count == 0)
                 return RedirectToAction("Index", "GioHang");
 
-
             ViewBag.TongSl = Quantity();
             ViewBag.TongTien = TinhTongTien();
+
+            ViewBag.Order = new Orders(); // để bind form đặt hàng
+            return View(giohang); // Model là giỏ hàng
+        }
+        [HttpPost]
+        public ActionResult DatHang(Orders model)
+        {
+            if (Session["TaiKhoan"] == null)
+                return RedirectToAction("Login", "User");
+
+            var giohang = LayGioHang();
+            if (giohang == null || giohang.Count == 0)
+                return RedirectToAction("Index", "GioHang");
+
+            if (ModelState.IsValid)
+            {
+                // Gán thêm thông tin đơn hàng
+                model.OrderDate = DateTime.Now;
+                model.Status = 0;
+
+                var user = Session["TaiKhoan"] as Users;
+                model.UserId = user.Id;
+
+                // Lưu Orders
+                database.Orders.Add(model);
+                database.SaveChanges(); // để có Id cho đơn hàng
+
+                // Lưu từng chi tiết sản phẩm
+                foreach (var item in giohang)
+                {
+                    var ct = new OrderDetails
+                    {
+                        OrderId = model.Id,
+                        ProductId = item.ProductId,
+                        Price = item.Price, 
+                        Num = item.Quantity
+                    };
+                    database.OrderDetails.Add(ct);
+                }
+
+                database.SaveChanges();
+
+                // Xoá giỏ hàng sau khi đặt
+                Session["GioHang"] = null;
+
+                return RedirectToAction("XacNhanDatHang");
+            }
+
+            // Nếu có lỗi, trả lại View cũ
+            ViewBag.TongSl = Quantity();
+            ViewBag.TongTien = TinhTongTien();
+            ViewBag.Order = model;
             return View(giohang);
         }
-    }
+        public ActionResult XacNhanDatHang()
+        {
+            return View();
+        }
 
+
+    }
 }

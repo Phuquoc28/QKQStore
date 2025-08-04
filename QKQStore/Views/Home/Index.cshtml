@@ -3,15 +3,46 @@
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = "Trang Chủ";
+    <link href="~/Content/BannerSheet.css" rel="stylesheet" />
 }
+
 <!-- BANNER TEXT -->
-<section class="text-banner d-flex flex-column align-items-center justify-content-center text-center py-5 px-3">
-    <h1 class="display-5 fw-bold mb-3">Mừng Khai Trương QKQStore </h1>
-    <p class="fs-4 mb-1">Đồng Giá <span class="text-danger fw-bold fs-2">77K</span></p>
-    <p class="fs-5 mb-1">Cùng Hàng Ngàn Deal Hot</p>
-    <p class="fs-5 mb-3">Sale Up To <span class="text-danger fw-bold fs-2">50%</span></p>
-    <a href="/Sales" class="btn btn-dark px-4 py-2 rounded-pill fw-semibold">SĂN SALE NGAY</a>
-</section>
+<div class="slider-container">
+    <div class="slider-track">
+        <div class="slide">
+            <div class="content">
+                <h1>Chào mừng đến với <span class="highlight">QKQshop.vn</span></h1>
+                <p>Khuyến mãi cực sốc mỗi ngày</p>
+                <a href="#" class="btn-banner">SĂN SALES NGAY</a>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <h1><span class="highlight">Giảm giá</span> đến 70%</h1>
+                <p>Chỉ áp dụng trong hôm nay</p>
+                <a href="#" class="btn-banner">XEM NGAY</a>
+            </div>
+        </div>
+        <div class="slide">
+            <div class="content">
+                <h1>Thời trang <span class="highlight">Nam tính</span></h1>
+                <p>Phong cách đỉnh cao cho bạn</p>
+                <a href="#" class="btn-banner">MUA NGAY</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    let currentIndex = 0;
+    const totalSlides = 3;
+    const track = document.querySelector('.slider-track');
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        track.style.transform = `translateX(-${currentIndex * 100}vw)`;
+    }, 3000);
+</script>
+
 
 <div class="row">
     @foreach (var product in Model)

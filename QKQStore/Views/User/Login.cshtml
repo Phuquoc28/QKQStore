@@ -36,8 +36,12 @@
         </div>
         <div>
             <a href="@Url.Action("Register","User")" style="text-decoration:none; font-weight:bold">Tạo Tài Khoản</a>
-           
+
         </div>
         <button type="submit" class="btn btn-success" style="width:200px; margin-left:auto; margin-right:auto">ĐĂNG NHẬP</button>
+        @if (Session["User"] != null)
+        {
+            <a href="@Url.Action("Logout", "User")" class="btn btn-danger">Đăng xuất</a>
+        }
     </div>
 }

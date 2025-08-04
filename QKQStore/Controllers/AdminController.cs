@@ -14,18 +14,14 @@ namespace QKQStore.Controllers
         // GET: Admin
         public ActionResult IndexAdmin()
         {
-            if (Session["TaiKhoan"] == null || ((Users)Session["TaiKhoan"]).RoleId != 1)
-            {
+            var user = Session["TaiKhoan"] as Users;
+            if (user == null || user.RoleId != 1)
                 return RedirectToAction("Login", "User");
-            }
-            else
-            {
-                return RedirectToAction("IndexAdmin", "Admin");
-            }
-            return View();
+            var product = database.Products.ToList();
+            return View(product);
         }
         //Hiển thị danh sách sản phẩm và phân trang
-        public ActionResult SanPham(int? page)
+        public ActionResult SanPham(int? page) 
         {
             var listProduct = database.Products.ToList();
             //Tạo Biến cho biết số sản phẩm mỗi trang 

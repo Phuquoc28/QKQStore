@@ -12,12 +12,12 @@ namespace QKQStore.Controllers
 {
     public class CategoriesController : Controller
     {
-        private QKQStoreEntities db = new QKQStoreEntities();
+        private QKQStoreEntities database = new QKQStoreEntities();
 
         // GET: Categories
         public ActionResult Index()
         {
-            return View(db.Categories.ToList());
+            return View(database.Categories.ToList());
         }
 
         // GET: Categories/Details/5
@@ -27,7 +27,7 @@ namespace QKQStore.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categories categories = db.Categories.Find(id);
+            Categories categories = database.Categories.Find(id);
             if (categories == null)
             {
                 return HttpNotFound();
@@ -46,14 +46,28 @@ namespace QKQStore.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Name,CreateAt,UpdateAt")] Categories categories)
+        public ActionResult Create(Categories categories)
         {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    categories.CreateAt = DateTime.Now;
+                    database.Categories.Add(categories);
+                    database.SaveChanges();
+                }
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                return View();
+            }
             if (ModelState.IsValid)
             {
                 categories.CreateAt = DateTime.Now;
-                db.Categories.Add(categories);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                database.Categories.Add(categories);
+                database.SaveChanges();
+                return RedirectToAction("Index", "Categories");
             }
 
             return View(categories);
@@ -66,7 +80,7 @@ namespace QKQStore.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categories categories = db.Categories.Find(id);
+            Categories categories = database.Categories.Find(id);
             if (categories == null)
             {
                 return HttpNotFound();
@@ -84,9 +98,9 @@ namespace QKQStore.Controllers
             if (ModelState.IsValid)
             {
                 categories.UpdateAt = DateTime.Now;
-                db.Entry(categories).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                database.Entry(categories).State = EntityState.Modified;
+                database.SaveChanges();
+                return RedirectToAction("Index", "Categories");
             }
             return View(categories);
         }
@@ -98,7 +112,7 @@ namespace QKQStore.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Categories categories = db.Categories.Find(id);
+            Categories categories = database.Categories.Find(id);
             if (categories == null)
             {
                 return HttpNotFound();
@@ -111,19 +125,11 @@ namespace QKQStore.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Categories categories = db.Categories.Find(id);
-            db.Categories.Remove(categories);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            Categories categories = database.Categories.Find(id);
+            database.Categories.Remove(categories);
+            database.SaveChanges();
+            return RedirectToAction("Index", "Categories");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }

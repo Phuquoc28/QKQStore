@@ -1,9 +1,7 @@
-﻿
-@{
+﻿@{
     ViewBag.Title = "_LayoutAdmin";
 
 }
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,48 +21,24 @@
                 <img src="~/Content/Pic/QKQlogo.png" style="height: 40px;" alt="Logo QKQs" />
                 <span style="margin-left: 10px; font-size: 0; font-weight: unset;">QKQstore.vn</span>
             </div>
-            @Html.ActionLink("QKQ Store", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            @Html.ActionLink("QKQ Store", "IndexAdmin", "Admin", new { @class = "navbar-brand" })
+           
             <nav style="display: flex; gap: 70px; position:relative">
                 <!-- tăng khoảng cách giữa các mục -->
-                <div class="dropdown position-relative">
-                    <a class="nav-link text-white position-relative d-flex align-items-center" href="#">
-                        <span class="position-relative d-inline-block">
-                            SALES
-                            <span class="hot-badge">HOT</span>
-                        </span>
-                        <i class="bi bi-caret-down-fill ms-1"></i>
+           
+                    <a class="nav-link text-white position-relative d-flex align-items-center" href="@Url.Action("SanPham", "Admin")">
+                            Quản Lý Sản Phẩm
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Đồng giá 77k</a></li>
-                        <li><a class="dropdown-item" href="#">Sale trạm quần áo</a></li>
-                        <li><a class="dropdown-item" href="#">Sale phụ kiện</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <a class="nav-link text-white d-flex align-items-center" href="#">
-                       Quần <i class="bi bi-caret-down-fill ms-1"></i>
+                    <a class="nav-link text-white d-flex align-items-center" href="@Url.Action("Index","Categories")">
+                        Quản Lý Danh Mục
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Quần short</a></li>
-                        <li><a class="dropdown-item" href="#">Quần dài</a></li>
-                        <li><a class="dropdown-item" href="#">Quần thể thao</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
-                    <a class="nav-link text-white d-flex align-items-center" href="#">
-                        ÁO <i class="bi bi-caret-down-fill ms-1"></i>
+                
+             
+                    <a class="nav-link text-white d-flex align-items-center" href="@Url.Action("IndexDonHang","Order")">
+                        Quản Lý Đơn Hàng
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Áo thun</a></li>
-                        <li><a class="dropdown-item" href="#">Áo sơ mi</a></li>
-                        <li><a class="dropdown-item" href="#">Áo polo</a></li>
-                    </ul>
-                </div>
-                <div class="dropdown">
+             
+                
                     <a class="nav-link text-white d-flex align-items-center" href="#">
                         PHỤ KIỆN <i class="bi bi-caret-down-fill ms-1"></i>
                     </a>
@@ -74,16 +48,34 @@
                         <li><a class="dropdown-item" href="#">Vớ</a></li>
                         <li><a class="dropdown-item" href="#">Giày</a></li>
                     </ul>
-                </div>
+             
             </nav>
 
 
             <div class="d-flex align-items-center gap-3">
-                <a href="@Url.Action("Login","User")"><i class="bi bi-person text-white fs-4"></i></a>
-                <a href="@Url.Action("Index", "GioHang")" class="position-relative">
-                    <i class="bi bi-cart text-white fs-4"></i>
-                </a>
-
+                <div style="text-align:center">
+                    <a style="color:floralwhite; display:block" href="@Url.Action("Login","User")">
+                        <i class="bi bi-person fs-4"></i>
+                    </a>
+                    <span class="text-white" style="font-size:12px;">
+                        @if (Session["Fullname"] != null)
+                        {
+                            @Session["Fullname"]
+                        }
+                        else
+                        {
+                            @:Khách
+                        }
+                        @if (Session["Fullname"] != null)
+                        {
+                            <a href="@Url.Action("Logout","User")"
+                               style="color:white; font-size:12px; display:block; margin-top:2px;">
+                                Đăng xuất
+                            </a>
+                        }
+                    </span>
+                </div>
+              
                 <form class="d-flex">
                     <input class="form-control form-control-sm" type="search" placeholder="Tìm kiếm..." />
                     <button class="btn btn-sm btn-light ms-2"><i class="bi bi-search"></i></button>
@@ -156,4 +148,3 @@
     @RenderSection("scripts", required: false)
 </body>
 </html>
-

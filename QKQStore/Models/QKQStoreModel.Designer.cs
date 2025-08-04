@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'D:\Lập trình web\QKQStore\QKQStore\Models\QKQStoreModel.edmx'. 
+﻿// T4 code generation is enabled for model 'D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\Models\QKQStoreModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

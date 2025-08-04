@@ -1,6 +1,5 @@
-﻿@using QKQStore.Models
+﻿@model PagedList.IPagedList<QKQStore.Models.Products>
 @using PagedList.Mvc
-@model PagedList.PagedList<Products>
 
 @{
     ViewBag.Title = "Quản Lý Sản Phẩm Admin";
@@ -13,7 +12,7 @@
     @Html.ActionLink("THÊM MỚI", "Create", "Products")
 </p>
 
-<table style="table" class="table table-bordered">
+<table class="table table-bordered">
     <tr>
         <th>Tên sản phẩm</th>
         <th>Giá</th>
@@ -42,6 +41,7 @@
     }
 </table>
 
+@*Phân Trang*@
 <br />
 Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
 

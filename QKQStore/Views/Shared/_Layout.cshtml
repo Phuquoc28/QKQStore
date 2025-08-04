@@ -73,9 +73,30 @@
 
 
             <div class="d-flex align-items-center gap-3">
-                <a href="@Url.Action("Login","User")"><i class="bi bi-person text-white fs-4"></i></a>
+                <div style="text-align:center">
+                    <a style="color:floralwhite; display:block" href="@Url.Action("Login","User")">
+                        <i class="bi bi-person fs-4"></i>
+                    </a>
+                    <span class="text-white" style="font-size:12px;">
+                        @if (Session["Fullname"] != null)
+                        {
+                            @Session["Fullname"]
+                        }
+                        else
+                        {
+                            @:Khách
+                        }
+                        @if (Session["Fullname"] != null)
+                        {
+                            <a href="@Url.Action("Logout","User")"
+                               style="color:white; font-size:12px; display:block; margin-top:2px;">
+                                Đăng xuất
+                            </a>
+                        }
+                    </span>
+                </div>
                 <a href="@Url.Action("Index", "GioHang")" class="position-relative">
-               
+
                     <div class="ml-auto">
                         @Html.Action("GioHangPartial", "GioHang")
                     </div>

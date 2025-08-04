@@ -37,7 +37,7 @@ namespace QKQStore.Controllers
                     database.Products.Add(products);
                     database.SaveChanges();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("SanPham","Admin");
             }
             catch (Exception ex)
             {
@@ -81,7 +81,7 @@ namespace QKQStore.Controllers
                     proDB.UpdateAt = DateTime.Now;
                     database.SaveChanges();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("SanPham", "Admin");
             }
             catch (Exception ex)
             {
@@ -105,7 +105,7 @@ namespace QKQStore.Controllers
                 database.Products.Remove(products);
                 products.UpdateAt = DateTime.Now;
                 database.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("SanPham", "Admin");
             }
             catch (Exception ex)
             {
