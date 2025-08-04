@@ -18,6 +18,10 @@ namespace QKQStore.Controllers
             {
                 return RedirectToAction("Login", "User");
             }
+            else
+            {
+                return RedirectToAction("IndexAdmin", "Admin");
+            }
             return View();
         }
         //Hiển thị danh sách sản phẩm và phân trang
