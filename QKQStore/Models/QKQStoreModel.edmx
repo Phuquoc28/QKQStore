@@ -14,18 +14,6 @@
           <Property Name="CreateAt" Type="datetime" />
           <Property Name="UpdateAt" Type="datetime" />
         </EntityType>
-        <EntityType Name="Feedback">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="30" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="30" />
-          <Property Name="Email" Type="nvarchar" MaxLength="150" />
-          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
-          <Property Name="Title" Type="nvarchar" MaxLength="200" />
-          <Property Name="Note" Type="nvarchar" MaxLength="500" />
-        </EntityType>
         <EntityType Name="OrderDetails">
           <Key>
             <PropertyRef Name="Id" />
@@ -49,16 +37,6 @@
           <Property Name="Note" Type="nvarchar" MaxLength="500" />
           <Property Name="OrderDate" Type="datetime" />
           <Property Name="Status" Type="int" />
-        </EntityType>
-        <EntityType Name="ProductImages">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="ProductID" Type="int" Nullable="false" />
-          <Property Name="ImageUrl" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="CreateAt" Type="datetime" />
-          <Property Name="UpdateAt" Type="datetime" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -96,18 +74,6 @@
           <Property Name="CreateAt" Type="datetime" />
           <Property Name="UpdateAt" Type="datetime" />
         </EntityType>
-        <EntityType Name="Vouchers">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
-          <Property Name="DiscountPercent" Type="int" />
-          <Property Name="MinOrderAmount" Type="int" />
-          <Property Name="IsActive" Type="bit" />
-          <Property Name="CreateAt" Type="datetime" />
-          <Property Name="UpdateAt" Type="datetime" />
-        </EntityType>
         <Association Name="FK__OrderDeta__Order__5165187F">
           <End Role="Orders" Type="Self.Orders" Multiplicity="1" />
           <End Role="OrderDetails" Type="Self.OrderDetails" Multiplicity="*" />
@@ -141,18 +107,6 @@
             </Principal>
             <Dependent Role="Orders">
               <PropertyRef Name="UserId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__ProductIm__Produ__47DBAE45">
-          <End Role="Products" Type="Self.Products" Multiplicity="1" />
-          <End Role="ProductImages" Type="Self.ProductImages" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Products">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ProductImages">
-              <PropertyRef Name="ProductID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -182,14 +136,11 @@
         </Association>
         <EntityContainer Name="QKQStoreModelStoreContainer">
           <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ProductImages" EntityType="Self.ProductImages" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="Vouchers" EntityType="Self.Vouchers" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK__OrderDeta__Order__5165187F" Association="Self.FK__OrderDeta__Order__5165187F">
             <End Role="Orders" EntitySet="Orders" />
             <End Role="OrderDetails" EntitySet="OrderDetails" />
@@ -201,10 +152,6 @@
           <AssociationSet Name="FK__Orders__UserId__4E88ABD4" Association="Self.FK__Orders__UserId__4E88ABD4">
             <End Role="Users" EntitySet="Users" />
             <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ProductIm__Produ__47DBAE45" Association="Self.FK__ProductIm__Produ__47DBAE45">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="ProductImages" EntitySet="ProductImages" />
           </AssociationSet>
           <AssociationSet Name="FK__Products__Catego__440B1D61" Association="Self.FK__Products__Catego__440B1D61">
             <End Role="Categories" EntitySet="Categories" />
@@ -229,18 +176,6 @@
           <Property Name="CreateAt" Type="DateTime" Precision="3" />
           <Property Name="UpdateAt" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Products" Relationship="Self.FK__Products__Catego__440B1D61" FromRole="Categories" ToRole="Products" />
-        </EntityType>
-        <EntityType Name="Feedback">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="FirstName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="LastName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
-          <Property Name="Note" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="OrderDetails">
           <Key>
@@ -270,17 +205,6 @@
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Order__5165187F" FromRole="Orders" ToRole="OrderDetails" />
           <NavigationProperty Name="Users" Relationship="Self.FK__Orders__UserId__4E88ABD4" FromRole="Orders" ToRole="Users" />
         </EntityType>
-        <EntityType Name="ProductImages">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductID" Type="Int32" Nullable="false" />
-          <Property Name="ImageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="CreateAt" Type="DateTime" Precision="3" />
-          <Property Name="UpdateAt" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="Products" Relationship="Self.FK__ProductIm__Produ__47DBAE45" FromRole="ProductImages" ToRole="Products" />
-        </EntityType>
         <EntityType Name="Products">
           <Key>
             <PropertyRef Name="Id" />
@@ -297,7 +221,6 @@
           <Property Name="UpdateAt" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Categories" Relationship="Self.FK__Products__Catego__440B1D61" FromRole="Products" ToRole="Categories" />
           <NavigationProperty Name="OrderDetails" Relationship="Self.FK__OrderDeta__Produ__52593CB8" FromRole="Products" ToRole="OrderDetails" />
-          <NavigationProperty Name="ProductImages" Relationship="Self.FK__ProductIm__Produ__47DBAE45" FromRole="Products" ToRole="ProductImages" />
         </EntityType>
         <EntityType Name="Roles">
           <Key>
@@ -322,18 +245,6 @@
           <Property Name="UpdateAt" Type="DateTime" Precision="3" />
           <NavigationProperty Name="Orders" Relationship="Self.FK__Orders__UserId__4E88ABD4" FromRole="Users" ToRole="Orders" />
           <NavigationProperty Name="Roles" Relationship="Self.FK__Users__RoleId__3B75D760" FromRole="Users" ToRole="Roles" />
-        </EntityType>
-        <EntityType Name="Vouchers">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="DiscountPercent" Type="Int32" />
-          <Property Name="MinOrderAmount" Type="Int32" />
-          <Property Name="IsActive" Type="Boolean" />
-          <Property Name="CreateAt" Type="DateTime" Precision="3" />
-          <Property Name="UpdateAt" Type="DateTime" Precision="3" />
         </EntityType>
         <Association Name="FK__Products__Catego__440B1D61">
           <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
@@ -383,18 +294,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__ProductIm__Produ__47DBAE45">
-          <End Role="Products" Type="Self.Products" Multiplicity="1" />
-          <End Role="ProductImages" Type="Self.ProductImages" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Products">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="ProductImages">
-              <PropertyRef Name="ProductID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__Users__RoleId__3B75D760">
           <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
           <End Role="Users" Type="Self.Users" Multiplicity="*" />
@@ -409,14 +308,11 @@
         </Association>
         <EntityContainer Name="QKQStoreEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Categories" EntityType="Self.Categories" />
-          <EntitySet Name="Feedback" EntityType="Self.Feedback" />
           <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" />
           <EntitySet Name="Orders" EntityType="Self.Orders" />
-          <EntitySet Name="ProductImages" EntityType="Self.ProductImages" />
           <EntitySet Name="Products" EntityType="Self.Products" />
           <EntitySet Name="Roles" EntityType="Self.Roles" />
           <EntitySet Name="Users" EntityType="Self.Users" />
-          <EntitySet Name="Vouchers" EntityType="Self.Vouchers" />
           <AssociationSet Name="FK__Products__Catego__440B1D61" Association="Self.FK__Products__Catego__440B1D61">
             <End Role="Categories" EntitySet="Categories" />
             <End Role="Products" EntitySet="Products" />
@@ -432,10 +328,6 @@
           <AssociationSet Name="FK__Orders__UserId__4E88ABD4" Association="Self.FK__Orders__UserId__4E88ABD4">
             <End Role="Users" EntitySet="Users" />
             <End Role="Orders" EntitySet="Orders" />
-          </AssociationSet>
-          <AssociationSet Name="FK__ProductIm__Produ__47DBAE45" Association="Self.FK__ProductIm__Produ__47DBAE45">
-            <End Role="Products" EntitySet="Products" />
-            <End Role="ProductImages" EntitySet="ProductImages" />
           </AssociationSet>
           <AssociationSet Name="FK__Users__RoleId__3B75D760" Association="Self.FK__Users__RoleId__3B75D760">
             <End Role="Roles" EntitySet="Roles" />
@@ -455,19 +347,6 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
                 <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Feedback">
-            <EntityTypeMapping TypeName="QKQStoreModel.Feedback">
-              <MappingFragment StoreEntitySet="Feedback">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-                <ScalarProperty Name="LastName" ColumnName="LastName" />
-                <ScalarProperty Name="Email" ColumnName="Email" />
-                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-                <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Note" ColumnName="Note" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -494,17 +373,6 @@
                 <ScalarProperty Name="Note" ColumnName="Note" />
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
                 <ScalarProperty Name="Status" ColumnName="Status" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ProductImages">
-            <EntityTypeMapping TypeName="QKQStoreModel.ProductImages">
-              <MappingFragment StoreEntitySet="ProductImages">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
-                <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -542,19 +410,6 @@
                 <ScalarProperty Name="Address" ColumnName="Address" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
                 <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-                <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
-                <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Vouchers">
-            <EntityTypeMapping TypeName="QKQStoreModel.Vouchers">
-              <MappingFragment StoreEntitySet="Vouchers">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Code" ColumnName="Code" />
-                <ScalarProperty Name="DiscountPercent" ColumnName="DiscountPercent" />
-                <ScalarProperty Name="MinOrderAmount" ColumnName="MinOrderAmount" />
-                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
                 <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
                 <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
               </MappingFragment>

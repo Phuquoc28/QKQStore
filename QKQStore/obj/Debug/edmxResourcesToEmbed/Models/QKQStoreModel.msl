@@ -11,19 +11,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Feedback">
-      <EntityTypeMapping TypeName="QKQStoreModel.Feedback">
-        <MappingFragment StoreEntitySet="Feedback">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Note" ColumnName="Note" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="OrderDetails">
       <EntityTypeMapping TypeName="QKQStoreModel.OrderDetails">
         <MappingFragment StoreEntitySet="OrderDetails">
@@ -47,17 +34,6 @@
           <ScalarProperty Name="Note" ColumnName="Note" />
           <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
           <ScalarProperty Name="Status" ColumnName="Status" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="ProductImages">
-      <EntityTypeMapping TypeName="QKQStoreModel.ProductImages">
-        <MappingFragment StoreEntitySet="ProductImages">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-          <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
-          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
-          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -95,19 +71,6 @@
           <ScalarProperty Name="Address" ColumnName="Address" />
           <ScalarProperty Name="Password" ColumnName="Password" />
           <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-          <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
-          <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Vouchers">
-      <EntityTypeMapping TypeName="QKQStoreModel.Vouchers">
-        <MappingFragment StoreEntitySet="Vouchers">
-          <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="Code" ColumnName="Code" />
-          <ScalarProperty Name="DiscountPercent" ColumnName="DiscountPercent" />
-          <ScalarProperty Name="MinOrderAmount" ColumnName="MinOrderAmount" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
           <ScalarProperty Name="CreateAt" ColumnName="CreateAt" />
           <ScalarProperty Name="UpdateAt" ColumnName="UpdateAt" />
         </MappingFragment>

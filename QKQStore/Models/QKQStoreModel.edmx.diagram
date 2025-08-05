@@ -6,19 +6,15 @@
     <edmx:Diagrams>
       <Diagram DiagramId="df0e8add7c8a4059aab2ece569356d42" Name="Diagram1" ZoomLevel="48">
         <EntityTypeShape EntityType="QKQStoreModel.Categories" Width="1.5" PointX="0.75" PointY="2.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QKQStoreModel.Feedback" Width="1.5" PointX="12.875" PointY="1.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QKQStoreModel.OrderDetails" Width="1.5" PointX="10.125" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QKQStoreModel.Orders" Width="1.5" PointX="10" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="QKQStoreModel.ProductImages" Width="1.5" PointX="5.75" PointY="5.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QKQStoreModel.Products" Width="1.5" PointX="5.75" PointY="1.875" IsExpanded="true" />
         <EntityTypeShape EntityType="QKQStoreModel.Roles" Width="1.5" PointX="2" PointY="4.625" IsExpanded="true" />
         <EntityTypeShape EntityType="QKQStoreModel.Users" Width="1.5" PointX="0.75" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="QKQStoreModel.Vouchers" Width="1.5" PointX="12.625" PointY="6" IsExpanded="true" />
         <AssociationConnector Association="QKQStoreModel.FK__Products__Catego__440B1D61" ManuallyRouted="false" />
         <AssociationConnector Association="QKQStoreModel.FK__OrderDeta__Order__5165187F" ManuallyRouted="false" />
         <AssociationConnector Association="QKQStoreModel.FK__OrderDeta__Produ__52593CB8" ManuallyRouted="false" />
         <AssociationConnector Association="QKQStoreModel.FK__Orders__UserId__4E88ABD4" ManuallyRouted="false" />
-        <AssociationConnector Association="QKQStoreModel.FK__ProductIm__Produ__47DBAE45" ManuallyRouted="false" />
         <AssociationConnector Association="QKQStoreModel.FK__Users__RoleId__3B75D760" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

@@ -1,0 +1,29 @@
+﻿@model List<QKQStore.Models.Products>
+@{
+    ViewBag.Title = "Kết quả tìm kiếm";
+}
+
+<h2>Kết quả cho: "@ViewBag.Query"</h2>
+
+@if (Model.Count == 0)
+{
+    <p>Không tìm thấy sản phẩm nào.</p>
+}
+else
+{
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-md-3 mb-4">
+                <div class="card h-100">
+                    <img src="@Url.Content("~/Content/Pic/" + item.Image)" style="width:150px;height:auto; margin-left:auto;margin-right:auto" alt="@item.Title" />
+                    <div class="card-body">
+                        <h5 class="card-title">@item.Title</h5>
+                        <p class="card-text">@item.Price.ToString("N0") VNĐ</p>
+                        <a href="/Products/Details/@item.Id" class="btn btn-primary">Xem chi tiết</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+}

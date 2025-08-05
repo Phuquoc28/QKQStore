@@ -146,7 +146,6 @@ namespace QKQStore.Controllers
             {
                 users = database.Users.Find(id);
                 database.Users.Remove(users);
-                users.UpdateAt = DateTime.Now;
                 database.SaveChanges();
                 return RedirectToAction("Index");
             }

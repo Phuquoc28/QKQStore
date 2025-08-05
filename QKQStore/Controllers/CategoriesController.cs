@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using QKQStore.Models;
 
 namespace QKQStore.Controllers
@@ -15,37 +16,35 @@ namespace QKQStore.Controllers
         private QKQStoreEntities database = new QKQStoreEntities();
 
         // GET: Categories
-        public ActionResult Index()
+        public ActionResult IndexAdmin()
         {
-            return View(database.Categories.ToList());
+            return RedirectToAction("IndexDanhMuc","Categories");
         }
 
-        // GET: Categories/Details/5
-        public ActionResult Details(int? id)
+        //Hiển thị danh sách Danh Mục và phân trang
+        public ActionResult IndexDanhMuc(int? page)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Categories categories = database.Categories.Find(id);
-            if (categories == null)
-            {
-                return HttpNotFound();
-            }
-            return View(categories);
+            var listCategories = database.Categories.ToList();
+            //Tạo Biến cho biết số sản phẩm mỗi trang 
+            int pageSize = 3;
+            //Tạo Biến số trang 
+            int pageNum = (page ?? 1);
+            return View(listCategories.OrderBy(sp => sp.Id).ToPagedList(pageNum, pageSize));
         }
 
-        // GET: Categories/Create
+        //Index
+        //public ActionResult Index()
+        //{
+          //  return View(database.Categories.ToList());
+        //}
+
+
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Categories/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult Create(Categories categories)
         {
             try
@@ -56,79 +55,65 @@ namespace QKQStore.Controllers
                     database.Categories.Add(categories);
                     database.SaveChanges();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexDanhMuc","Categories");
             }
             catch (Exception ex)
             {
                 return View();
             }
-            if (ModelState.IsValid)
-            {
-                categories.CreateAt = DateTime.Now;
-                database.Categories.Add(categories);
-                database.SaveChanges();
-                return RedirectToAction("Index", "Categories");
-            }
-
-            return View(categories);
         }
 
-        // GET: Categories/Edit/5
-        public ActionResult Edit(int? id)
+
+        public ActionResult Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Categories categories = database.Categories.Find(id);
-            if (categories == null)
-            {
-                return HttpNotFound();
-            }
+            var categories = database.Categories.Find(id);
             return View(categories);
         }
 
-        // POST: Categories/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Name,CreateAt,UpdateAt")] Categories categories)
+        public ActionResult Edit(Categories categories)
         {
-            if (ModelState.IsValid)
+            try
             {
-                categories.UpdateAt = DateTime.Now;
-                database.Entry(categories).State = EntityState.Modified;
+                if (ModelState.IsValid)
+                {
+                    var categoriesDB = database.Categories.Find(categories.Id);
+                    categoriesDB.Name = categories.Name;
+                    categoriesDB.UpdateAt = DateTime.Now;
+                    database.SaveChanges();
+                }
+                return RedirectToAction("IndexDanhMuc", "Categories");
+            }
+            catch (Exception ex)
+            {
+                return View(categories);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var categories = database.Categories.Find(id);
+            return View(categories);
+        }
+
+    
+        [HttpPost]
+        
+        public ActionResult Delete(Categories categories, int id)
+        {
+            try
+            {
+                categories = database.Categories.Find(id);
+                database.Categories.Remove(categories);
                 database.SaveChanges();
-                return RedirectToAction("Index", "Categories");
+                return RedirectToAction("IndexDanhMuc", "Categories");
             }
-            return View(categories);
-        }
-
-        // GET: Categories/Delete/5
-        public ActionResult Delete(int? id)
-        {
-            if (id == null)
+            catch (Exception ex)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return View(categories);
             }
-            Categories categories = database.Categories.Find(id);
-            if (categories == null)
-            {
-                return HttpNotFound();
-            }
-            return View(categories);
-        }
-
-        // POST: Categories/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            Categories categories = database.Categories.Find(id);
-            database.Categories.Remove(categories);
-            database.SaveChanges();
-            return RedirectToAction("Index", "Categories");
+        
         }
 
     }

@@ -5,11 +5,6 @@
     Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
 }
 
-<h2>IndexDonHang</h2>
-
-<p>
-    @Html.ActionLink("Tạo Mới", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -67,7 +62,6 @@
         </td>
         <td>
             @Html.ActionLink("Sửa", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Chi Tiết ", "Details", new { id=item.Id }) |
             @Html.ActionLink("Xóa", "Delete", new { id=item.Id })
         </td>
     </tr>

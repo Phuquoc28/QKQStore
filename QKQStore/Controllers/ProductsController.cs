@@ -16,6 +16,12 @@ namespace QKQStore.Controllers
         {
             return View(database.Products.Include("Categories").ToList());
         }
+        //Hiển Thị Sản Phẩm Theo Danh Mục 
+        public ActionResult TimDanhMuc(int categoryId)
+        {
+            var products = database.Products.Where(p => p.CategoryID == categoryId).ToList();
+            return View("TimDanhMuc", products);
+        }
         [HttpGet]
         public ActionResult Create() { return View(); }
         [HttpPost]
@@ -45,6 +51,11 @@ namespace QKQStore.Controllers
             }
         }
         public ActionResult Details(int id)
+        {
+            var porduct = database.Products.Find(id);
+            return View(porduct);
+        }
+        public ActionResult DetailsAdmin(int id)
         {
             var porduct = database.Products.Find(id);
             return View(porduct);
@@ -112,7 +123,20 @@ namespace QKQStore.Controllers
                 return View();
             }
         }
-
-
+        
+        //Chức năng tìm kiếm
+        public ActionResult Search(string query)
+        {
+            var result = database.Products.Where(p => p.Title.Contains(query)).ToList();
+            ViewBag.Query = query;
+            return View("Kqtimkiem", result);
+        }
+        public ActionResult Kqtimkiem()
+        {
+            return View();
+        }
     }
+
 }
+
+    

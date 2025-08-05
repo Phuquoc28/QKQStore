@@ -1,70 +1,147 @@
 ﻿body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+    padding-top: 0px;
+    overflow-x: hidden !important;
 }
 
+/* BANNER SLIDER - FIXED */
 .slider-container {
     width: 100vw;
-    height: 400px; /* Đổi từ 100vh */
+    height: 100vh;
     overflow: hidden;
     position: relative;
+    margin: 0;
+    margin-left: calc(-50vw + 50%); /* Đẩy ra ngoài container */
+    box-sizing: border-box;
 }
 
 .slider-track {
     display: flex;
-    width: 300vw; /* vẫn giữ nguyên, vì có 3 slide */
+    width: 300vw;
+    height: 100vh;
     transition: transform 1s ease-in-out;
 }
 
 .slide {
     width: 100vw;
-    height: 300px; /* Đổi từ 100vh */
+    height: 100vh;
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(120deg, #ffdee9, #b5fffc);
-    transition: transform 0.5s ease;
+    position: relative;
+    box-sizing: border-box;
 }
 
+    .slide:nth-child(1) {
+        background: linear-gradient(135deg, #6c757d 0%, #495057 50%, #343a40 100%);
+    }
+
+    .slide:nth-child(2) {
+        background: linear-gradient(135deg, #868e96 0%, #6c757d 40%, #495057 80%, #343a40 100%);
+    }
+
+    .slide:nth-child(3) {
+        background: linear-gradient(135deg, #adb5bd 0%, #868e96 30%, #6c757d 70%, #343a40 100%);
+    }
 
     .slide:hover {
-        transform: scale(1.05);
+        transform: scale(1.02);
+        transition: transform 0.5s ease;
     }
 
 .content {
     text-align: center;
     animation: fadeIn 1s ease-in;
+    padding: 0 20px;
+    max-width: 90%;
+    color: white;
+    z-index: 2;
 }
 
+    .content h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        font-weight: bold;
+    }
+
+    .content p {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+    }
+
 .highlight {
-    color: crimson;
-    font-weight: bold;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 .btn-banner {
     display: inline-block;
-    margin-top: 1rem;
-    padding: 0.75 1.25rem;
-    background-color: crimson;
+    padding: 1rem 2rem;
+    background-color: #ff4757;
     color: white;
     text-decoration: none;
     font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-size: 2.2rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.4);
 }
 
     .btn-banner:hover {
-        background-color: darkred;
+        background-color: #ff3742;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(255, 71, 87, 0.6);
+        color: white;
+        text-decoration: none;
     }
 
 @keyframes fadeIn {
-    from {
+    0% {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(50px);
     }
 
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+.sales-title {
+    text-align: center;
+    margin: 60px auto;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+    .sales-title h2 {
+        font-size: 28px;
+        color: #0e0e0e;
+        letter-spacing: 1px;
+        animation: zoomInOut 2s ease-in-out infinite;
+    }
+
+@keyframes zoomInOut {
+    0%, 100% {
+        transform: scale(1.25);
+    }
+
+    50% {
+        transform: scale(1.65);
+    }
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 2.5rem;
+    }
+
+    .content p {
+        font-size: 1.2rem;
+    }
+
+    .btn-banner {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
     }
 }

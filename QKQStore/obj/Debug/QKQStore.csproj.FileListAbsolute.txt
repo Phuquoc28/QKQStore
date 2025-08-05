@@ -139,6 +139,8 @@ D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\EntityFramework.SqlSer
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\Microsoft.Web.Infrastructure.dll
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\Newtonsoft.Json.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.dll
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.Mvc.dll
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Helpers.dll
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Mvc.dll
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Optimization.dll
@@ -149,6 +151,8 @@ D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.WebPages.Ra
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\WebGrease.dll
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\EntityFramework.xml
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\EntityFramework.SqlServer.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.xml
+D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.Mvc.xml
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Helpers.xml
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Mvc.xml
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\System.Web.Optimization.xml
@@ -164,7 +168,3 @@ D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.csproj.
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.csproj.CopyComplete
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.dll
 D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\obj\Debug\QKQStore.pdb
-D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.dll
-D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.Mvc.dll
-D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.xml
-D:\Kì 3 2024-2025\Lập trình web\QKQStore\QKQStore\bin\PagedList.Mvc.xml

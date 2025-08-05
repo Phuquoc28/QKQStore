@@ -9,18 +9,6 @@
     <Property Name="CreateAt" Type="datetime" />
     <Property Name="UpdateAt" Type="datetime" />
   </EntityType>
-  <EntityType Name="Feedback">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FirstName" Type="nvarchar" MaxLength="30" />
-    <Property Name="LastName" Type="nvarchar" MaxLength="30" />
-    <Property Name="Email" Type="nvarchar" MaxLength="150" />
-    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
-    <Property Name="Title" Type="nvarchar" MaxLength="200" />
-    <Property Name="Note" Type="nvarchar" MaxLength="500" />
-  </EntityType>
   <EntityType Name="OrderDetails">
     <Key>
       <PropertyRef Name="Id" />
@@ -44,16 +32,6 @@
     <Property Name="Note" Type="nvarchar" MaxLength="500" />
     <Property Name="OrderDate" Type="datetime" />
     <Property Name="Status" Type="int" />
-  </EntityType>
-  <EntityType Name="ProductImages">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ProductID" Type="int" Nullable="false" />
-    <Property Name="ImageUrl" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="CreateAt" Type="datetime" />
-    <Property Name="UpdateAt" Type="datetime" />
   </EntityType>
   <EntityType Name="Products">
     <Key>
@@ -88,18 +66,6 @@
     <Property Name="Address" Type="nvarchar" MaxLength="200" />
     <Property Name="Password" Type="char" MaxLength="32" Nullable="false" />
     <Property Name="RoleId" Type="int" Nullable="false" />
-    <Property Name="CreateAt" Type="datetime" />
-    <Property Name="UpdateAt" Type="datetime" />
-  </EntityType>
-  <EntityType Name="Vouchers">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Code" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="DiscountPercent" Type="int" />
-    <Property Name="MinOrderAmount" Type="int" />
-    <Property Name="IsActive" Type="bit" />
     <Property Name="CreateAt" Type="datetime" />
     <Property Name="UpdateAt" Type="datetime" />
   </EntityType>
@@ -139,18 +105,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__ProductIm__Produ__47DBAE45">
-    <End Role="Products" Type="Self.Products" Multiplicity="1" />
-    <End Role="ProductImages" Type="Self.ProductImages" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Products">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="ProductImages">
-        <PropertyRef Name="ProductID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__Products__Catego__440B1D61">
     <End Role="Categories" Type="Self.Categories" Multiplicity="1" />
     <End Role="Products" Type="Self.Products" Multiplicity="*" />
@@ -177,14 +131,11 @@
   </Association>
   <EntityContainer Name="QKQStoreModelStoreContainer">
     <EntitySet Name="Categories" EntityType="Self.Categories" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Feedback" EntityType="Self.Feedback" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="OrderDetails" EntityType="Self.OrderDetails" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Orders" EntityType="Self.Orders" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ProductImages" EntityType="Self.ProductImages" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Vouchers" EntityType="Self.Vouchers" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK__OrderDeta__Order__5165187F" Association="Self.FK__OrderDeta__Order__5165187F">
       <End Role="Orders" EntitySet="Orders" />
       <End Role="OrderDetails" EntitySet="OrderDetails" />
@@ -196,10 +147,6 @@
     <AssociationSet Name="FK__Orders__UserId__4E88ABD4" Association="Self.FK__Orders__UserId__4E88ABD4">
       <End Role="Users" EntitySet="Users" />
       <End Role="Orders" EntitySet="Orders" />
-    </AssociationSet>
-    <AssociationSet Name="FK__ProductIm__Produ__47DBAE45" Association="Self.FK__ProductIm__Produ__47DBAE45">
-      <End Role="Products" EntitySet="Products" />
-      <End Role="ProductImages" EntitySet="ProductImages" />
     </AssociationSet>
     <AssociationSet Name="FK__Products__Catego__440B1D61" Association="Self.FK__Products__Catego__440B1D61">
       <End Role="Categories" EntitySet="Categories" />

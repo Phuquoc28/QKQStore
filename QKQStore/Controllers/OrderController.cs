@@ -16,7 +16,7 @@ namespace QKQStore.Controllers
             return View(database.Orders.ToList());
         }
 
-        public ActionResult Create() { return View(); }
+      /*  public ActionResult Create() { return View(); }
         [HttpPost]
         public ActionResult Create(Orders order)
         {
@@ -28,13 +28,13 @@ namespace QKQStore.Controllers
                     database.Orders.Add(order);
                     database.SaveChanges();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexDonHang","Order");
             }
             catch (Exception ex)
             {
                 return View();
             }
-        }
+        }*/
         public ActionResult Edit(int id)
         {
             var order = database.Orders.Find(id);
@@ -52,7 +52,7 @@ namespace QKQStore.Controllers
                     
                     database.SaveChanges();
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexDonHang","Order");
             }
             catch (Exception ex)
             {
@@ -70,10 +70,10 @@ namespace QKQStore.Controllers
         {
             try
             {
-                order = database.Orders.Find(id);
+                order = database.Orders.Find(order.Id);
                 database.Orders.Remove(order);
                 database.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("IndexDonHang", "Order");
             }
             catch (Exception ex)
             {

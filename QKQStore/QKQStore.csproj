@@ -142,14 +142,10 @@
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductsController.cs" />
     <Compile Include="Controllers\UserController.cs" />
-    <Compile Include="Controllers\VouchersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Categories.cs">
-      <DependentUpon>QKQStoreModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Feedback.cs">
       <DependentUpon>QKQStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Mathangmua.cs" />
@@ -157,9 +153,6 @@
       <DependentUpon>QKQStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Orders.cs">
-      <DependentUpon>QKQStoreModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\ProductImages.cs">
       <DependentUpon>QKQStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Products.cs">
@@ -184,9 +177,6 @@
       <DependentUpon>QKQStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Users.cs">
-      <DependentUpon>QKQStoreModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Vouchers.cs">
       <DependentUpon>QKQStoreModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -295,9 +285,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Categories\Create.cshtml" />
     <Content Include="Views\Categories\Delete.cshtml" />
-    <Content Include="Views\Categories\Details.cshtml" />
     <Content Include="Views\Categories\Edit.cshtml" />
-    <Content Include="Views\Categories\Index.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\Create.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
@@ -327,6 +315,11 @@
     <Content Include="Views\Order\Create.cshtml" />
     <Content Include="Views\Order\Edit.cshtml" />
     <Content Include="Views\Order\Delete.cshtml" />
+    <Content Include="Views\Categories\IndexDanhMuc.cshtml" />
+    <Content Include="Views\Products\DetailsAdmin.cshtml" />
+    <Content Include="Views\Products\Kqtimkiem.cshtml" />
+    <Content Include="Views\Products\TimDanhMuc.cshtml" />
+    <Content Include="Views\Categories\IndexAdmin.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

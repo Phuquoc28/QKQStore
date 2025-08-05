@@ -34,7 +34,7 @@
             <td>@item.Categories.Name</td>
             <td>
                 @Html.ActionLink("Sửa", "Edit", "Products", new { id = item.Id }, null) |
-                @Html.ActionLink("Chi tiết", "Details", "Products", new { id = item.Id }, null) |
+                @Html.ActionLink("Chi tiết", "DetailsAdmin", "Products", new { id = item.Id }, null) |
                 @Html.ActionLink("Xóa", "Delete", "Products", new { id = item.Id }, null)
             </td>
         </tr>
@@ -50,11 +50,15 @@ Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.Page
 </div>
 
 <style>
-    .MenuTrang li {
+    .MenuTrang a {
+        text-decoration: none;
+        color: black;
         display: inline;
+        margin: 10px;
     }
 
     td, th {
         text-align: center;
     }
 </style>
+
